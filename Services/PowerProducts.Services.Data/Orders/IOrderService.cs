@@ -10,7 +10,7 @@ public interface IOrderService
 
         IEnumerable<T> GetAll<T>();
 
-        Task SetOrdersToReceipt(Receipt receipt);
+        Task SetOrdersToReceipt(PowerProducts.Data.Models.Receipt receipt);
 
         Task<bool> CompleteOrder(string orderId);
 
