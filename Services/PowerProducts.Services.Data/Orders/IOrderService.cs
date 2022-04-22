@@ -1,12 +1,10 @@
-﻿namespace PowerProducts.Services.Data.NewFolder.Orders
-{
-    using System.Collections.Generic;
-    using System.Threading.Tasks;
+﻿namespace PowerProducts.Services.Data;
 
-    using PowerProducts.Services.Data.ServiceModels;
-    using PowerProducts.Data.Models;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using PowerProducts.Services.Data.ServiceModels;
 
-    public interface IOrderService
+public interface IOrderService
     {
         Task<bool> CreateOrder(OrderServiceModel orderServiceModel);
 
@@ -20,4 +18,3 @@
 
         Task<bool> IncreaseQuantity(string orderId);
     }
-}

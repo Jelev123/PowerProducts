@@ -1,4 +1,4 @@
-﻿namespace PowerFood.Data.Seeding
+﻿namespace PowerProducts.Data.Seeding
 {
     using System;
     using System.Collections.Generic;

@@ -13,10 +13,10 @@
     public class ReceiptService : IReceiptService
     {
         private readonly IOrderService orderService;
-        private readonly ApplicationDbContext data;
+        private readonly PowerProducts.Data.ApplicationDbContext data;
         private readonly IRepository<Receipt> receiptRepository;
 
-        public ReceiptService(IOrderService orderService, ApplicationDbContext data, IRepository<Receipt> receiptRepository)
+        public ReceiptService(IOrderService orderService, PowerProducts.Data.ApplicationDbContext data, IRepository<Receipt> receiptRepository)
         {
             this.orderService = orderService;
             this.data = data;

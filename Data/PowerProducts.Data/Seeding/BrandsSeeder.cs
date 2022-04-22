@@ -3,6 +3,7 @@
     using System;
     using System.Linq;
     using System.Threading.Tasks;
+
     using PowerProducts.Data.Models;
 
     public class BrandsSeeder : ISeeder

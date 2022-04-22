@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+
     using PowerProducts.Data.Common.Models;
     using PowerProducts.Data.Models.ViewModels.Receipts.Details;
     using PowerProducts.Services.Mapping;

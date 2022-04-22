@@ -44,4 +44,8 @@
     <ProjectReference Include="..\PowerProducts.Data.Models\PowerProducts.Data.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Seeding\" />
+  </ItemGroup>
+
 </Project>

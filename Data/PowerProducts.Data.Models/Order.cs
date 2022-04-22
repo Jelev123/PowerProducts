@@ -4,7 +4,6 @@
     using PowerProducts.Data.Models.ViewModels;
     using PowerProducts.Data.Models.ViewModels.Receipts.Details;
     using PowerProducts.Services.Mapping;
-    using PowerProducts.Data.Common.Models;
 
     public class Order : BaseModel<string>, IMapTo<OrderCartViewModel>, IMapTo<ReceiptDetailsOrderViewModel>
     {
