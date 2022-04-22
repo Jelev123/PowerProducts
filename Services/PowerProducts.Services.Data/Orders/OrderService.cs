@@ -51,7 +51,7 @@ public class OrderService : IOrderService
         return orders;
     }
 
-    public async Task SetOrdersToReceipt(Receipt receipt)
+    public async Task SetOrdersToReceipt(PowerProducts.Data.Models.Receipt receipt)
     {
         List<Order> ordersFromDb = await this.data.Orders
             .Where(order => order.UserId == receipt.RecipientId && order.StatusOrder.Id == 2).ToListAsync();

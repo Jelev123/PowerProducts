@@ -3,11 +3,9 @@
     using System;
     using System.Linq;
     using System.Threading.Tasks;
-
-    using PowerProducts.Data;
     using PowerProducts.Data.Common.Repositories;
     using PowerProducts.Data.Models;
-    using PowerProducts.Services.Data.NewFolder.Orders;
+    using PowerProducts.Services.Data;
     using PowerProducts.Services.Mapping;
 
     public class ReceiptService : IReceiptService

@@ -40,12 +40,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\PowerProducts.Common\PowerProducts.Common.csproj" />
+    <ProjectReference Include="..\..\Services\PowerProducts.Services\PowerProducts.Services.csproj" />
     <ProjectReference Include="..\PowerProducts.Data.Common\PowerProducts.Data.Common.csproj" />
     <ProjectReference Include="..\PowerProducts.Data.Models\PowerProducts.Data.Models.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Seeding\" />
   </ItemGroup>
 
 </Project>

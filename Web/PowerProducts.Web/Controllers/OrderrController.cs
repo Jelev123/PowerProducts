@@ -6,7 +6,7 @@
 
     using Microsoft.AspNetCore.Mvc;
     using PowerProducts.Data.Models.ViewModels;
-    using PowerProducts.Services.Data.NewFolder.Orders;
+    using PowerProducts.Services.Data;
     using PowerProducts.Services.Data.Receipt;
 
     public class OrderrController : Controller

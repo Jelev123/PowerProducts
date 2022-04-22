@@ -1,6 +1,7 @@
 ﻿namespace PowerProducts.Data.Models
 {
     using System.Collections.Generic;
+
     using PowerProducts.Data.Common.Models;
     using PowerProducts.Data.Models.ViewModels.Product;
     using PowerProducts.Data.ViewModels.Food;

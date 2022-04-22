@@ -3,9 +3,8 @@ namespace PowerProducts.Data.Models
 {
     using System;
 
-    using PowerProducts.Data.Common.Models;
-
     using Microsoft.AspNetCore.Identity;
+    using PowerProducts.Data.Common.Models;
 
     public class ApplicationRole : IdentityRole, IAuditInfo, IDeletableEntity
     {

@@ -7,13 +7,12 @@
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity.UI.Services;
     using Microsoft.AspNetCore.Mvc;
-    using PowerProducts.Services.Data.ServiceModels;
     using PowerProducts.Common;
     using PowerProducts.Data;
     using PowerProducts.Data.ViewModels.Food;
     using PowerProducts.Data.ViewModels.Product;
     using PowerProducts.Services.Data;
-    using PowerProducts.Services.Data.NewFolder.Orders;
+    using PowerProducts.Services.Data.ServiceModels;
 
     public class ProductsController : Controller
     {
