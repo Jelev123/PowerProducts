@@ -1,0 +1,215 @@
+/*
+ Theme Name:   Powerfood Child
+ Description:  PowerFood Child Theme
+ Author:       PowerFood
+ Author URI:   https://powerfood.bg
+ Template:     powerfood
+ Version:      1.0.0
+ Text Domain:  powerfood
+*/
+
+body {
+  background-color: #000;
+  font-size: 15px;
+}
+/* ГЛАВНО МЕНЮ - цвят */
+.whb-color-dark .navigation-style-default .item-level-0 > a {
+  color: #e83a3a;
+  }
+
+/* FOOTER - р.1281 */
+.footer-sidebar {
+  padding-top: 10px;
+  padding-bottom: 0px;
+  }
+
+/* FOOTER - р.2865 */
+.footer-column {
+  margin-bottom: 10px;
+  }
+
+/* INFO Box - р.10539	*/
+.box-style-border.box-icon-align-top .info-box-content {
+  padding-top: 10px;
+  }
+
+/* Скриване на FEATURED IMAGE от Single Post	 */
+body .post-single-page .entry-header {
+    display: none;
+}
+
+/* Цвят WISHLIST, COMPARE - р.1671	*/
+.wd-tools-element > a {
+   color: #aaaaaa;
+}
+
+/* Цвят WISHLIST, COMPARE - р.12322	*/
+.wd-action-btn > a {
+  color: #5da7f7;
+}
+
+/* ДЕФИНИРАНЕ НА цвета на падащото меню категории */
+.vertical-navigation .menu {
+    background-color: #101010;
+}
+
+.vertical-navigation .item-level-0 > a {
+      padding: 7px 18px;
+      color: #fff;
+      line-height: 10px; }
+.blog-post-loop .article-body-container {
+    background-color: #101010;
+}
+
+.woodmart-entry-meta .meta-reply .replies-count {
+    background-color: #dc1d24;
+}
+
+.page-links > span:not(.page-links-title) {
+    color: #e2d7b1;
+}
+
+.woodmart-info-box {
+  margin-bottom: 15px;
+}
+
+.woodmart-info-box .info-btn-wrapper {
+    margin-top: 2px; }
+	
+.woodmart-hover-base .content-product-imagin {
+    background-color: #101010;
+}
+
+.quantity input[type="button"] {
+    color: #e2d7b1;
+}
+
+.woocommerce-ordering select {
+    max-width: 300px;
+    color: #e2d7b1;
+}
+
+.woodmart-products-per-page .per-page-title {
+    color: #dc1d24;
+}
+
+.woodmart-products-per-page .per-page-variation {
+    color: #e2d7b1;
+}
+
+.yoast-breadcrumb .breadcrumb_last {
+    color: #dc1d24;
+}
+
+.woocommerce-pagination .page-numbers .page-numbers {
+    color: #e2d7b1;
+}
+
+.compare-btn-wrapper, .summary-inner > .yith-wcwl-add-to-wishlist, .sizeguide-btn-wrapp {
+    margin-right: 10px;
+}
+
+.product-tabs-wrapper {
+  border-top: none; 
+  background-color: #101010; }
+
+.widget_price_filter .price_slider_amount .price_label > span {
+   color: #e2d7b1;
+}
+
+.woocommerce-breadcrumb .breadcrumb-last,
+  .woocommerce-breadcrumb .breadcrumb_last,
+  .yoast-breadcrumb .breadcrumb-last,
+  .yoast-breadcrumb .breadcrumb_last {
+    color: #dc1d24;
+}
+
+.woocommerce-MyAccount-navigation ul li.is-active > a {
+    color: rgba(220, 29, 36, 0.9);
+}
+
+.woocommerce-MyAccount-navigation ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: rgba(226, 215, 177, 0.9);
+    line-height: 20px;
+    text-transform: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.wishlist_table tr td.wishlist-empty {
+    color: #dc1d24;
+}
+
+.woodmart-single-footer .tags-list a {
+    color: #f1f1f1;
+}
+
+.single-post-navigation .blog-posts-nav-btn a {
+    color: #e2d7b1;
+}
+
+td.product-remove a, .woocommerce-remove-coupon, .yith-woocompare-widget .products-list li a.remove {
+    background-color: #dc1d24;
+}
+
+.woodmart-pagination > a,
+  .woodmart-pagination > span:not(.page-links-title),
+  .page-links > a,
+  .page-links > span:not(.page-links-title) {
+    color: #e2d7b1;
+}
+
+/* Преместване на бутона за Zoom на Product image горе вляво */
+.product-additional-galleries {
+  top: 0;
+}
+/* Цвят за Избери вкус - р.15604 */
+.variations_form .variations label {
+    color: #aaaaaa;
+}
+
+label {
+  color: #aaaaaa;
+}
+  
+/* Цвят за WichList, Compare, Size Guide - р.19747 */
+.compare-btn-wrapper a,
+  .summary-inner > .yith-wcwl-add-to-wishlist a,
+  .sizeguide-btn-wrapp a {
+    color: #3DB1C4;
+}
+
+/* Бекграунд на формата за поръчка - р.21186	 */
+.woodmart-table-wrapper {
+  background-color: #101010;
+}
+
+/* Бекграунд на формата за поръчка за наложен платеж - р.21211 */
+.payment_methods .payment_box {
+    background-color: #101010;
+}
+
+/* Цвят за името на автор в коментарите от блога	*/
+.comments-area .comment-author .fn {
+    color: #3DB1C4;
+}
+
+/* Цвят за бекграунда на Checkout формата */
+.checkout-order-review,
+.woocommerce-order-pay .entry-content > .woocommerce {
+  background-color: #101010;
+}
+
+
+/* Цвят за редовете в сайдбара, формата за поръчка и мн. др. */
+.color-scheme-dark .widget a.product-title, .color-scheme-dark .woodmart-widget a.product-title, .color-scheme-dark div[class^="vc_wp"] a.product-title, .autocomplete-suggestion .suggestion-title, .widget_recent_entries ul li a, .widget_recent_comments ul li > a, .woodmart-recent-posts .entry-title a, .woodmart-menu-price .menu-price-title, .group_table td.label a, .product-grid-item .product-title, .yith-woocompare-widget .products-list li a.title, .product-title, table.compare-list tr.title td, .widget_recent_reviews .product-title, td.product-name a, a.product-title {
+    color: #ffffff;
+}
+
+/* Цвят на GDPR текста */
+.woodmart-cookies-inner .cookies-info-text {
+    color: #b20f0f;
+}
+
