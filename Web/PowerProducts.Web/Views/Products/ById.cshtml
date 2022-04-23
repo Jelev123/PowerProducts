@@ -72,7 +72,7 @@
             Brand :
             <a style="color: red" class="btn btn-dark" asp-controller="Brands" asp-action="BrandsByById" asp-route-id="@Model.BrandId">@Model.BrandName</a>
         </h4>
-        @if (Model.CategoryId != 60)
+        @if (Model.CategoryId != 1)
         {
             <div class="row-cols">
                 <h4 style="color: white">
@@ -81,14 +81,14 @@
                 </h4>
             </div>
         }
-        @if (Model.SubcategoryId != 214)
+        @if (Model.SubcategoryId != 48)
         {
             <h4 style="color: white">
                 Subcategory :
                 <a style="color: red" class="btn btn-dark" asp-controller="SubCategories" asp-action="SubCategoriesById" asp-route-id="@Model.SubcategoryId">@Model.SubCategoryName</a>
             </h4>
         }
-        @if (Model.IngredientId != 195)
+        @if (Model.IngredientId != 49)
         {
             <h4 style="color: white">
                 Ingredients :
