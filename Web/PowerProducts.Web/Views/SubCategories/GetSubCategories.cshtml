@@ -7,7 +7,7 @@
 
 @foreach (var s in Model.OrderByDescending(s => s.ProductsCount))
 {
-    @if(s.Id != 214)
+    @if(s.Id != 48)
     {
         <div class="row-cols">
         <a style="color: black" class="btn btn-danger" asp-controller="SubCategories" asp-action="SubCategoriesById" asp-route-id="@s.Id">@s.Name</a>

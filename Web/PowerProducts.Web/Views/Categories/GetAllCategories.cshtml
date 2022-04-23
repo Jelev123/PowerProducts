@@ -10,11 +10,11 @@
 @foreach (var s in Model.OrderByDescending(s => s.ProductsCount))
 {
     
-    @if (s.Id != 60)
+    @if (s.Id != 1)
     {
           <div class="row-cols">
 
-        <a style="color: black" class="btn btn-danger" asp-controller="Categories" asp-action="GetAllCategories" asp-route-id="@s.Id">@s.Name</a>
+        <a style="color: black" class="btn btn-danger" asp-controller="Categories" asp-action="CategoriesById" asp-route-id="@s.Id">@s.Name</a>
 
         @if (s.ProductsCount > 0)
         {
