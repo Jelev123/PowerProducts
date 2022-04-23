@@ -1,8 +1,8 @@
 ﻿namespace PowerProducts.Data.Configurations
 {
-    using PowerProducts.Data.Models;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
+    using PowerProducts.Data.Models;
 
     public class ApplicationUserConfiguration : IEntityTypeConfiguration<ApplicationUser>
     {

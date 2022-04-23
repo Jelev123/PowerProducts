@@ -1,6 +1,7 @@
 ﻿namespace PowerProducts.Data
 {
     using System.Globalization;
+    using System.Linq;
     using System.Reflection;
 
     using Microsoft.AspNetCore.Builder;
@@ -94,20 +95,20 @@
                 {
                     context.Database.EnsureCreated();
 
-                    //if (!context.StatusOrders.Any())
-                    //{
-                    //    context.StatusOrders.Add(new StatusOrder
-                    //    {
-                    //        Name = "Active",
-                    //    });
+                    if (!context.StatusOrders.Any())
+                    {
+                        context.StatusOrders.Add(new StatusOrder
+                        {
+                            Name = "Active",
+                        });
 
-                    //    context.StatusOrders.Add(new StatusOrder
-                    //    {
-                    //        Name = "Completed",
-                    //    });
+                        context.StatusOrders.Add(new StatusOrder
+                        {
+                            Name = "Completed",
+                        });
 
-                    //    context.SaveChanges();
-                    //}
+                        context.SaveChanges();
+                    }
                 }
 
                 if (env.IsDevelopment())

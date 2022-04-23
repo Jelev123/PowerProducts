@@ -1,9 +1,95 @@
 ﻿@using PowerProducts.Common
+@using System.Security.Cryptography
+@model PowerProducts.Data.ViewModels.Home.HomeViewModel
 @{
     this.ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome to @GlobalConstants.SystemName!</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+<div id="products-search-bar-holder" class="form-group d-flex justify-content-between w-50">
+    <input  type="text" class="form-control text-black" id="products-search-bar" name="search" placeholder="Search..." />
 </div>
+
+
+<table class="table  table-dark">
+    <thead>
+        <tr>
+            <th scope="col"></th>
+            <th style="color : white" scope="col">Products</th>
+            <th style="color : white" scope="col">Categories</th>
+            <th style="color : white" scope="col">Subcategories</th>
+            <th style="color : white" scope="col">Ingredients</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row"></th>
+            <td>@Model.ProductCount</td>
+            <td>@Model.CategoryCounts</td>
+            <td>@Model.SubCategoryCounts</td>
+            <td>@Model.IngredientCounts</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+<div class="row">
+    @foreach (var random in Model.RandomProducts)
+    {
+       
+            <div class="col-md-4">
+                <div class="col-md-10">
+                    <div class="card-body">
+                        <a class="col-md-4" asp-controller="Products" asp-action="ById" asp-route-id="@random.Id">
+                            <img width="200" src="@random.ImageUrl" />
+                        </a>
+                        <h2 style="color: orange" class="card-title">@random.Name</h2>
+
+
+
+                        @if(random.Price != 0)
+                    {
+                        @if (random.Price <= 90)
+                        {
+                            <h3 style="color: white">Price: @random.Price.00 lv</h3>
+
+                        }
+                        @if (random.Price > 90)
+                        {
+                            <h3 style="color: red">Price: @random.Price.00 lv</h3>
+
+                        }
+
+                    }
+                    @if(random.Price == 0)
+                    {
+                        <h3 style="color : red">Coming soon</h3>
+                    }
+
+                    </div>
+                </div>
+            </div>
+        
+    }
+</div>
+
+<script>
+    $('#sort').change(function () {
+        $('#order-form').submit();
+    });
+
+    $('#products-search-bar').on("change paste keyup", function () {
+        $('.card-body').show();
+
+        let searchValue = $('#products-search-bar').val();
+
+        for (let name of $('.card-body')) {
+            let productName = $($(name).children()[1]).text();
+
+            if (!productName.toLowerCase().includes(searchValue.toLowerCase())) {
+                $(name).hide();
+            }
+        }
+    });
+</script>

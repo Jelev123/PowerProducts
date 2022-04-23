@@ -1,0 +1,20 @@
+﻿<script>
+    $('#sort').change(function () {
+        $('#order-form').submit();
+    });
+
+    $('#products-search-bar').on("change paste keyup", function () {
+        $('.row-cols').show();
+
+        let searchValue = $('#products-search-bar').val();
+
+        for (let name of $('.row-cols')) {
+            let productName = $($(name).children()[0]).text();
+
+            if (!productName.toLowerCase().includes(searchValue.toLowerCase())) {
+                $(name).hide();
+            }
+        }
+    });
+</script>
+

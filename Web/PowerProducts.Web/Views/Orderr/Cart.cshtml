@@ -1,0 +1,109 @@
+﻿@using PowerProducts.Data.Models.ViewModels;
+@model List<OrderCartViewModel>
+@{
+    ViewData["Title"] = "Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1 class="text-left text-white">Cart</h1>
+
+@if (Model.Count == 0)
+{
+    <h2 class="text-center text-primary">You have no orders in your cart.</h2>
+
+}
+else
+{
+    <div id="orders" class="text-white">
+        <div class="order-info row mt-4">
+            <h3 style="color: white" class="col-md-1 text-left">#</h3>
+            <h3 style="color: white" class="col-md-3 text-left">Image</h3>
+            <h3 style="color: white" class="col-md-3 text-left">Product</h3>
+            <h3 style="color: white" class="col-md-2 text-left">Price</h3>
+            <h3 style="color: white" class="col-md-1 text-left">Quantity</h3>
+            <h3 style="color: white" class="col-md-2 text-center">Actions</h3>
+        </div>
+
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <div class="order row">
+                <h5 style="color: white" class="col-md-1 text-left">@(i + 1)</h5>
+                <div class="col-md-3">
+                    <img class="img-thumbnail product-cart-image"
+                         src="@Model[i].ProductOriginalUrl" width="200px" />
+                </div>
+                <h5 style="color: white" class="col-md-3 text-left">@Model[i].ProductName</h5>
+                <h5 style="color: white" class="col-md-2 text-left order-price">@Model[i].ProductPrice</h5>
+                <h5 style="color: white" class="col-md-1 text-right order-quantity">x@(Model[i].Quantity)</h5>
+                <div class="col-md-1 mx-auto d-flex justify-content-around">
+                    <div class="minus-button" id="@(Model[i].Id)-minus">
+                        <i class="fas fa-minus text-danger h4"></i>
+                    </div>
+                    <div class="plus-button" id="@(Model[i].Id)-plus">
+                        <i class="fas fa-plus text-info  h4"></i>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <form asp-controller="Orderr" asp-action="Complete" method="post" class="d-flex justify-content-between">
+        <button class="btn btn-success font-weight-bold">Cashout</button>
+        <h2  class="text-danger" id="total-price">Total: @Model.Sum(order => order.ProductPrice * order.Quantity).ToString("F2")</h2>
+    </form>
+}
+    <script>
+        function updateTotalPrice() {
+                  
+            let orders = $('.order');
+           
+            let totalPrice = 0;
+
+            
+            for (let order of orders) {
+               
+                let priceElement = $($(order).children()[3]);
+                
+                let quantityElement = $($(order).children()[4]);
+
+               
+                let currentPrice = Number($(priceElement).text())
+                let currentQuantity = Number($(quantityElement).text().toString().replace('x', ''));
+
+                
+                totalPrice += currentPrice * currentQuantity;
+            }
+
+            
+            $('#total-price').text('Total: ' + totalPrice.toFixed(2));
+        }
+
+        $('.minus-button').click(function () {
+            let orderId = $(this).attr('id').toString().replace('-minus', '');
+
+            //console.log($($($($(this).parent()).parent()).children()[4]).text());
+
+            let element = $($($($(this).parent()).parent()).children()[4]);
+
+                $.post({
+                    url: `/Orderr/${orderId}/Quantity/Reduce`,
+                    success: function () {
+                        let currentQuantity = Number(element.text().toString().replace('x', ''));
+                        element.text('x' + (currentQuantity - 1));
+                        updateTotalPrice();
+                    }
+                });
+            });
+            $('.plus-button').click(function () {
+                let orderId = $(this).attr('id').toString().replace('-plus', '');
+
+                let element = $($($($(this).parent()).parent()).children()[4]);
+
+                $.post({
+                    url: `/Orderr/${orderId}/Quantity/Increase`,
+                    success: function () {
+                        let currentQuantity = Number(element.text().toString().replace('x', ''));
+                        element.text('x' + (currentQuantity + 1));
+                        updateTotalPrice();
+                    }
+                });
+            });
+    </script>

@@ -1,0 +1,75 @@
+﻿@model PowerProducts.Data.ViewModels.Food.ProductListViewModel
+
+
+@{
+    this.ViewData["Title"] = "All Products, page " + Model.PageNumber;
+}
+
+<h2 style="color : white">@this.ViewData["Title"]</h2>
+
+
+
+<div id="products-search-bar-holder" class="form-group d-flex justify-content-between w-50">
+    <input type="text" class="form-control text-black" id="products-search-bar" name="search" placeholder="Search..." />
+</div>
+
+<div class="row">@foreach (var product in this.Model.Products)
+     {
+          <div class="col-md-4">
+                <div class="col-md-10">
+                    <div class="card-body">
+                        <a class="col-md-4" asp-controller="Products" asp-action="ById" asp-route-id="@product.Id">
+                            <img width="200" src="@product.OriginalUrl" />
+                        </a>
+                        <h2 style="color: orange" class="card-title">@product.Name</h2>
+
+                        @if(product.Price != 0)
+                    {
+                         @if (product.Price <= 90)
+                        {
+                            <h2 style="color: white">Price: @product.Price.00 lv</h2>
+
+                        }
+                        @if (product.Price > 90)
+                        {
+                            <h2 style="color: red">Price: @product.Price.00 lv</h2>
+
+                        }
+                    }
+                    @if(product.Price == 0)
+                    {
+                        <h2 style="color : red">Coming soon</h2>
+                    }
+
+
+                    </div>
+                </div>
+            </div>
+             
+         }
+</div>
+<partial name="_PaginPartilView" model="@Model" />
+
+
+
+<script>
+    $('#sort').change(function () {
+        $('#order-form').submit();
+    });
+
+    $('#products-search-bar').on("change paste keyup", function () {
+        $('.card-body').show();
+
+        let searchValue = $('#products-search-bar').val();
+
+        for (let name of $('.card-body')) {
+            let productName = $($(name).children()[1]).text();    
+
+            if (!productName.toLowerCase().includes(searchValue.toLowerCase())) {
+                $(name).hide();
+            }
+        }
+    });
+</script>
+
+

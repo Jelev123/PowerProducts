@@ -1,0 +1,46 @@
+﻿@using PowerProducts.Data.ViewModels.Food
+@model ProductListViewModel
+
+@if (Model.ProductsCount == 0)
+{
+    <h2 class="text-center text-danger"> Coming soon</h2>
+}
+<div class="row">
+    @foreach (var product in Model.Products)
+    {
+
+       <div class="col-md-4">
+                <div class="col-md-10">
+                    <div class="card-body">
+                        <a class="col-md-4" asp-controller="Products" asp-action="ById" asp-route-id="@product.Id">
+                            <img width="200" src="@product.OriginalUrl" />
+                        </a>
+                        <h2 style="color: orange" class="card-title">@product.Name</h2>
+
+    
+
+                        @if(product.Price != 0)
+                    {
+                         @if (product.Price <= 90)
+                        {
+                            <h2 style="color: white">Price: @product.Price.00 lv</h2>
+
+                        }
+                        @if (product.Price > 90)
+                        {
+                            <h2 style="color: red">Price: @product.Price.00 lv</h2>
+
+                        }
+                    }
+                    @if(product.Price == 0)
+                    {
+                        <h2 style="color : red">Coming soon</h2>
+                    }
+
+
+                    </div>
+                </div>
+            </div>
+             
+         }
+</div>

@@ -1,0 +1,37 @@
+﻿@using PowerProducts.Data.ViewModels.Product
+@model IEnumerable<CategoriesViewModel>
+
+
+    <div id="products-search-bar-holder" class="form-group d-flex justify-content-between w-50">
+    <input type="text" class="form-control text-primary" id="products-search-bar" name="search" placeholder="Search..." />
+</div>
+
+
+@foreach (var s in Model.OrderByDescending(s => s.ProductsCount))
+{
+    
+    @if (s.Id != 60)
+    {
+          <div class="row-cols">
+
+        <a style="color: black" class="btn btn-danger" asp-controller="Categories" asp-action="GetAllCategories" asp-route-id="@s.Id">@s.Name</a>
+
+        @if (s.ProductsCount > 0)
+        {
+            <div class="col" style="color:green">
+                @s.ProductsCount Products
+            </div>
+        }
+       @if(s.ProductsCount <= 0)
+        {
+             <div class="col" style="color:red"> Coming Soon!
+            </div>
+        }
+    </div>
+    }
+ 
+}
+
+
+
+<partial name="_SearchScriptPartial"/>

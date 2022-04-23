@@ -1,18 +1,37 @@
 ﻿@using PowerProducts.Common
+@using PowerProducts.Data.ViewModels.Product
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@this.ViewData["Title"] - @GlobalConstants.SystemName</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/xts-theme_settings_default-1606329589.css" />
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/style.min123123.css" />
+    <link rel="stylesheet" href="~/css/js_composer.min.css" />
+    <link rel="stylesheet" href="~/css/xts-theme_settings_default-1606329589.css" />
+    <link rel="stylesheet" href="~/css/styles-m.min.css" />
+    <link rel="stylesheet" href="~/css/styles-l.min.css />
+    <link rel="icon" type="image/x-icon" href="~/favicon-32x32.png" />
+    <link rel="icon" type="image/x-icon" href="~/favicon-32x32.png" />
+    <script src="~/js/jquery-3.4.1.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/jquery.datetimepicker.full.min.js"></script>
+    <script src="~/js/fontawesome.min.js"></script>
+    <script src="~/js/jquery-3.6.0.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/jquery.datetimepicker.full.min.js"></script>
+    <script src="~/js/fontawesome.min.js"></script>
+    <script src="~/js/script.min.js"></script>
+
+    <link rel="icon" href="~/favicon.ico" />
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">@GlobalConstants.SystemName</a>
+                <a class="btn btn-danger" asp-area="" asp-controller="Home" asp-action="Index">@GlobalConstants.SystemName</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -21,34 +40,60 @@
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a style="color: black" class="btn btn-danger" asp-area="" asp-controller="Products" asp-action="All">All</a>
+                        </li>
+                        <div class="row-cols">
+                            <div class="row">
+
+                        <li class="nav-item">
+                            <a style="color: black" class="btn btn-danger" asp-area="" asp-controller="Categories" asp-action="GetAllCategories">All Categories</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Settings" asp-action="Index">Settings</a>
+                            <a style="color: black" class="btn btn-danger" asp-area="" asp-controller="SubCategories" asp-action="GetSubCategories">All SubCategories</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a style="color: black" class="btn btn-danger" asp-area="" asp-controller="Ingredients" asp-action="GetAllIngredients">All Ingredients</a>
                         </li>
-                    </ul>
+                        <li class="nav-item">
+                            <a style="color: black" class="btn btn-danger" asp-area="" asp-controller="Brands" asp-action="GetAllBrands">All Brands</a>
+                        </li>
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                            <li class="nav-item">
+                                <a style="color: black" class="btn btn-danger" asp-area="" asp-controller="Orderr" asp-action="Cart">My Products</a>
+                            </li>
+                                }
+                                @if (User.IsInRole(GlobalConstants.AdministratorRoleName))
+                                {
+                            <li class="nav-item">
+                                <a class="btn btn-danger" asp-area="" asp-controller="Products" asp-action="CreateProduct">Create</a>
+                            </li>
+                                }
+                </ul> 
+                </div>
+                </div>
                 </div>
             </div>
+
+            
+           
+            
         </nav>
     </header>
-    
+
     <div class="container">
         <partial name="_CookieConsentPartial" />
         <main role="main" class="pb-3">
             @this.RenderBody()
         </main>
     </div>
-    
+
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; @DateTime.Now.Year - @GlobalConstants.SystemName - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; @DateTime.Now.Date.Date - @GlobalConstants.SystemName
         </div>
     </footer>
 
-    <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js" asp-append-version="true"></script>
     <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js" asp-append-version="true"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.min.js" asp-append-version="true"></script>

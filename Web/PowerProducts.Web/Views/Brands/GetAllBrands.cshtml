@@ -1,0 +1,31 @@
+﻿@using PowerProducts.Data.Models.ViewModels.Product
+@model IEnumerable<BrandsViewModel>
+
+
+<div id="products-search-bar-holder" class="form-group d-flex justify-content-between w-50">
+    <input type="text" class="form-control text-primary" id="products-search-bar" name="search" placeholder="Search..." />
+</div>
+
+@foreach (var s in Model.OrderByDescending(s => s.ProductsCount))
+{
+
+    <div class="row-cols">
+
+        <a style="color: black" class="btn btn-danger" asp-controller="Brands" asp-action="BrandsByById" asp-route-id="@s.Id">@s.Name</a>
+
+        @if (s.ProductsCount > 0)
+        {
+            <div class="col" style="color:green">
+                @s.ProductsCount Products
+            </div>
+        }
+        @if (s.ProductsCount <= 0)
+        {
+            <div class="col" style="color:red">
+                Coming Soon!
+            </div>
+        }
+    </div>
+}
+
+<partial name="_SearchScriptPartial"/>

@@ -1,0 +1,228 @@
+﻿@using Microsoft.CodeAnalysis.CSharp.Syntax
+@using PowerProducts.Common
+@using PowerProducts.Data.ViewModels.Product
+@model SingleProductViewModel
+
+
+
+
+@if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
+{
+
+    <div class="row">
+        <a asp-controller="Products" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-info">Edit</a>
+
+        <la class="single-meta">
+            <form method="post" asp-action="Delete" id="deleteForm" asp-route-id="@Model.Id">
+            </form>
+            <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
+        </la>
+        <a class="single-meta">
+            <form method="post" asp-action="SendToEmail" asp-route-id="@Model.Id">
+                <button class="btn btn-warning">Send to my email</button>
+            </form>
+        </a>
+    </div>
+}
+
+
+
+
+
+<div class="row ">
+    <div class="col">
+        <h3 style="color: red">@Model.Name</h3>
+
+        <a href="@Model.OriginalUrl">
+            <img src="@Model.OriginalUrl" width="400" alt="@Model.Name">
+        </a>
+
+
+
+        @if (Model.Price <= 90)
+        {
+
+            @if (Model.Price == 0)
+            {
+                <h1 style="color: red">Coming soon</h1>
+            }
+            else
+            {
+                <h1 style="color: white">Price: @Model.Price.00 lv</h1>
+
+            }
+
+        }
+        @if (Model.Price > 90)
+        {
+            <h1 style="color: red">Price: @Model.Price.00 lv</h1>
+
+        }
+
+
+        <button class="btn btn-primary text-black font-weight-bold" data-toggle="modal" data-target="#orderModal">Order</button>
+        <a asp-controller="Home" asp-action="Index" asp-route-id="@Model.Id" class="btn btn-success">Check others products</a>
+
+
+
+    </div>
+
+    <div class="row-cols">
+        <h4 style="color: white">
+            Brand :
+            <a style="color: red" class="btn btn-dark" asp-controller="Brands" asp-action="BrandsByById" asp-route-id="@Model.BrandId">@Model.BrandName</a>
+        </h4>
+        @if (Model.CategoryId != 60)
+        {
+            <div class="row-cols">
+                <h4 style="color: white">
+                    Category :
+                    <a style="color: red" class="btn btn-dark" asp-controller="Categories" asp-action="CategoriesById" asp-route-id="@Model.CategoryId">@Model.CategoryName</a>
+                </h4>
+            </div>
+        }
+        @if (Model.SubcategoryId != 214)
+        {
+            <h4 style="color: white">
+                Subcategory :
+                <a style="color: red" class="btn btn-dark" asp-controller="SubCategories" asp-action="SubCategoriesById" asp-route-id="@Model.SubcategoryId">@Model.SubCategoryName</a>
+            </h4>
+        }
+        @if (Model.IngredientId != 195)
+        {
+            <h4 style="color: white">
+                Ingredients :
+                <a style="color: red" class="btn btn-dark" asp-controller="Ingredients" asp-action="GetIngredientsById" asp-route-id="@Model.IngredientId">@Model.IngredientName</a>
+            </h4>
+        }
+
+
+
+
+
+    </div>
+
+    <div class="col">
+        @if (Model.Information == null && Model.Description == null)
+        {
+
+        }
+        else
+        {
+            <h2 style="color: red">Information :</h2>
+            <h2 style="color: white">@Model.Information</h2>
+
+
+            <h2 style="color: red">Description : </h2>
+
+            <h2 style="color: white">@Model.Description</h2>
+        }
+
+        @if (Model.Taste != null)
+        {
+            <h1 style="color: cornflowerblue">Flavors: @Model.Taste</h1>
+
+        }
+
+    </div>
+
+
+</div>
+
+
+
+
+<div class="modal" tabindex="-1" role="dialog" id="deleteModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>Do you want to delete "@Model.Name"?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" onclick="deleteForm.submit()">Yes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (!User.Identity.IsAuthenticated)
+{
+    <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 style="color : red">You have to login</h4>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-footer">
+                    <a style="color: black" class="btn btn-light" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@if (Model.Price == 0)
+{
+    <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 style="color : red">Sorry we don`t have this product</h4>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <a asp-controller="Home" asp-action="Index" asp-route-id="@Model.Id" class="btn btn-success">Check others products</a>
+
+            </div>
+        </div>
+    </div>
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 style="color : green" class="modal-title" id="orderModalLabel">Order - @Model.Name</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="order-form" asp-controller="Products" asp-action="Order" method="post">
+                        <div class="form-group">
+                            <label style="color : red" for="quantity" class="col-form-label font-weight-bold">Quantity</label>
+                            <input type="number"
+                               class="form-control"
+                               id="quantity"
+                               name="quantity">
+                            <input type="hidden" value="@Model.Id" name="productId" />
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="complete-order-button">Complete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+<script>
+    $('#complete-order-button').click(function () {
+        $('#order-form').submit();
+    });
+</script>

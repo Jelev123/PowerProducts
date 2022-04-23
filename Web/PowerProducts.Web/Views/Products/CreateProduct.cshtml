@@ -1,0 +1,63 @@
+﻿@using PowerProducts.Data.ViewModels.Enums
+@using System.Security.Cryptography.X509Certificates
+@model PowerProducts.Data.ViewModels.Product.CreateProductViewModel
+
+@{
+    ViewData["Title"] = "Add Product";
+    var categories = Model.Categories.Select(s => new SelectListItem(s.Value, s.Key));
+    var subcategories = Model.SubCategories.Select(s => new SelectListItem(s.Value, s.Key));
+    var brands = Model.Brands.Select(s => new SelectListItem(s.Value, s.Key));
+    var ingredients = Model.Ingredients.Select(s => new SelectListItem(s.Value, s.Key));
+}
+
+<h2 style="color: white">@ViewData["Title"]</h2>
+
+<hr style="h2"/>
+<div class="align-content-center">
+        
+    <div class="row col-md-4 offset-4">
+        <form method="post">
+            <div class="form-group" style="color: white">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="BrandId"></label>
+                <select asp-for="BrandId"class="form-control"  asp-items="brands"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryId"></label>
+                <select asp-for="CategoryId" class="form-control" asp-items="categories"></select>
+            </div>
+            <div class="form-text">
+                <label asp-for="SubCategoryId"></label>
+                <select asp-for="SubCategoryId" class="form-control"asp-items="subcategories"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="IngredientId" ></label>
+                <select asp-for="IngredientId"class="form-control" asp-items="ingredients"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price"></label>
+                <input asp-for="Price" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Flavors"></label>
+                <input asp-for="Flavors" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl"></label>
+                <input asp-for="ImageUrl" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Information"></label>
+                <textarea asp-for="Information" cols="50" rows="6"></textarea>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description"></label>
+                <textarea asp-for="Description" cols="50" rows="6"></textarea>
+            </div>
+            <input  class="btn text-light btn-info text-center" type="submit" value="Add" />
+        </form>
+    </div>
+</div>

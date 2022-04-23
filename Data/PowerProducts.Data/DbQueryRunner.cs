@@ -3,9 +3,8 @@
     using System;
     using System.Threading.Tasks;
 
-    using PowerProducts.Data.Common;
-
     using Microsoft.EntityFrameworkCore;
+    using PowerProducts.Data.Common;
 
     public class DbQueryRunner : IDbQueryRunner
     {

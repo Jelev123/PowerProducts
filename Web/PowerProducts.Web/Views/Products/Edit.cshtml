@@ -1,0 +1,87 @@
+﻿@using PowerProducts.Data.Models
+@model PowerProducts.Data.ViewModels.Product.EditProductViewModel
+@{
+    ViewData["Title"] = "Edit Product";
+}
+
+<h2 style="color: white">@ViewData["Title"]</h2>
+
+<form method="post" id="editForm">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+     < <div class="form-group">
+        <label asp-for="BrandId"></label>
+        <input asp-for="BrandId" class="form-control" />
+
+    </div>
+    <div class="form-group">
+        <label asp-for="Price"></label>
+        <input asp-for="Price" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Information"></label>
+        <input asp-for="Information" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <input asp-for="Description" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="CategoryId"></label>
+        <input asp-for="CategoryId" class="form-control" />
+    </div>
+
+    < <div class="form-group">
+        <label asp-for="SubcategoryId"></label>
+        <input asp-for="SubcategoryId" class="form-control" />
+
+    </div>
+    < <div class="form-group">
+        <label asp-for="Flavors"></label>
+        <input asp-for="Flavors" class="form-control" />
+
+    </div>
+    < <div class="form-group">
+        <label asp-for="BrandId"></label>
+        <input asp-for="BrandId" class="form-control" />
+
+    </div>
+    < <div class="form-group">
+        <label asp-for="IngredientId"></label>
+        <input asp-for="IngredientId" class="form-control" />
+
+    </div>
+
+    <div class="form-group">
+        <label asp-for="OriginalUrl"></label>
+        <input asp-for="OriginalUrl" class="form-control" />
+    </div>
+    <hr />
+    <input type="hidden" asp-for="Id" />
+</form>
+
+<button type="submit" class="btn btn-success" data-toggle="modal" data-target="#modalEdit">Save changes</button>
+
+<div class="modal" id="modalEdit" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirm edit</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Do you confirm this changes?
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="editForm.submit()">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
