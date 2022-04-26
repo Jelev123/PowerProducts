@@ -8,6 +8,7 @@
 <h2>:notebook: Overview</h2>
 PowerProducts is a web site for fitness products.
 You can browse products by categories, subcategories, ingredients and brands and you can order products.
+Search by their name.
 
 
  <h2>:wrench: Build With</h2> 
