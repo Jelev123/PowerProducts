@@ -1,17 +1,16 @@
-<h1>PowerProducts</h1>
+<h1>PowerProducts :muscle:</h1>
 
 <h2>Introduction</h2>
 
 <h3>PowerProducts Website is my defense project for ASP.NET Core MVC course at SoftUni (30.04.2022).</h3>
 
 
-<h2>Overview</h2>
+<h2>:notebook: Overview</h2>
 PowerProducts is a web site for fitness products.
 You can browse products by categories, subcategories, ingredients and brands and you can order products.
 
 
-
-<h2>Build With</h2>
+ <h2>:wrench: Build With</h2> 
 Template - https://github.com/NikolayIT/ASP.NET-Core-Template
 <h4>ASP.NET [CORE 5.0]</h2>
 <h4>ASP.NET CORE view components</h2>
