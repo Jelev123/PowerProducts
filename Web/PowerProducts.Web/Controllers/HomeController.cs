@@ -1,4 +1,4 @@
-﻿namespace PowerProducts.Data.Controllers
+﻿namespace PowerProducts.Web.Controllers
 {
     using System.Diagnostics;
     using System.Linq;
@@ -10,8 +10,8 @@
     using PowerProducts.Data.ViewModels.Food;
     using PowerProducts.Data.ViewModels.Home;
     using PowerProducts.Data.ViewModels.Product;
-    using PowerProducts.Services.Data;
-    using PowerProducts.Web.Controllers;
+    using PowerProducts.Services.Data.Counts;
+    using PowerProducts.Services.Data.Products;
 
     public class HomeController : BaseController
     {

@@ -1,4 +1,4 @@
-﻿namespace PowerProducts.Services.Data.Receipt
+﻿namespace PowerProducts.Services.Data.Receipts
 {
     using System.Threading.Tasks;
 

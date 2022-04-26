@@ -1,6 +1,5 @@
-﻿namespace PowerProducts.Services.Data
+﻿namespace PowerProducts.Services.Data.Ingredients
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
 

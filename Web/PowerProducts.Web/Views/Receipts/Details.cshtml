@@ -10,8 +10,8 @@
 <div class="products-holder w-50 mx-auto">
     @foreach (var order in Model.Orders)
     {
-        <div  class="product d-flex justify-content-between">
-            <div  class="product-name w-75">
+        <div class="product d-flex justify-content-between">
+            <div class="product-name w-75">
                 <h4 style="color : white">@order.ProductName</h4>
             </div>
             <div class="product-quantity-and-price d-flex justify-content-between w-25">
@@ -21,6 +21,7 @@
         </div>
     }
 </div>
+
 
 <div class="finish-order-holder w-50 mx-auto d-flex justify-content-between">
     <div class="form-holder w-25">
@@ -46,5 +47,12 @@
     </div>
     <div class="price-holder w-25">
         <h3 style="color : white" class="text-right">@Model.Recipient</h3>
+
+        <div class="col-md-1">
+            <a asp-controller="Home" asp-action="Index" class="btn btn-success">Ok</a>
+        </div>
+
     </div>
+
 </div>
+

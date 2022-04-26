@@ -1,9 +1,8 @@
-﻿namespace PowerProducts.Data.Controllers
+﻿namespace PowerProducts.Web.Controllers
 {
-
     using Microsoft.AspNetCore.Mvc;
     using PowerProducts.Data.Models.ViewModels.Receipts.Details;
-    using PowerProducts.Services.Data.Receipt;
+    using PowerProducts.Services.Data.Receipts;
 
     public class ReceiptsController : Controller
     {

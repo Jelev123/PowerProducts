@@ -1,9 +1,9 @@
-﻿namespace PowerProducts.Data.Controllers
+﻿namespace PowerProducts.Web.Controllers
 {
     using Microsoft.AspNetCore.Mvc;
     using PowerProducts.Data.Models.ViewModels.Product;
     using PowerProducts.Data.ViewModels.Food;
-    using PowerProducts.Services.Data;
+    using PowerProducts.Services.Data.Ingredients;
 
     public class IngredientsController : Controller
     {

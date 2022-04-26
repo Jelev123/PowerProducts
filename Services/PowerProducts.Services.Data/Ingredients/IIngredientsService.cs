@@ -1,4 +1,4 @@
-﻿namespace PowerProducts.Services.Data
+﻿namespace PowerProducts.Services.Data.Ingredients
 {
     using System.Collections.Generic;
 

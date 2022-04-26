@@ -1,4 +1,4 @@
-﻿namespace PowerProducts.Data.Controllers
+﻿namespace PowerProducts.Web.Controllers
 {
     using System.Security.Claims;
     using System.Text;
@@ -11,13 +11,16 @@
     using PowerProducts.Data;
     using PowerProducts.Data.ViewModels.Food;
     using PowerProducts.Data.ViewModels.Product;
-    using PowerProducts.Services.Data;
+    using PowerProducts.Services.Data.Brands;
+    using PowerProducts.Services.Data.Categories;
+    using PowerProducts.Services.Data.Ingredients;
+    using PowerProducts.Services.Data.Orders;
+    using PowerProducts.Services.Data.Products;
     using PowerProducts.Services.Data.ServiceModels;
+    using PowerProducts.Services.Data.Subcategories;
 
     public class ProductsController : Controller
     {
-        private readonly ApplicationDbContext data;
-
         private readonly IProductsService productsService;
         private readonly ICategoriesService categoriesService;
         private readonly ISubCategoriesService subCategoriesService;

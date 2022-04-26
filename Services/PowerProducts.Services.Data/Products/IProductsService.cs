@@ -1,24 +1,23 @@
-﻿namespace PowerProducts.Services.Data
+﻿namespace PowerProducts.Services.Data.Products;
+
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+using PowerProducts.Data.ViewModels.Product;
+
+public interface IProductsService
 {
-    using System.Collections.Generic;
-    using System.Threading.Tasks;
+    Task CreateProduct(CreateProductViewModel create);
 
-    using PowerProducts.Data.ViewModels.Product;
+    IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 100);
 
-    public interface IProductsService
-    {
-        Task CreateProduct(CreateProductViewModel create);
+    T GetById<T>(int id);
 
-        IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 100);
+    IEnumerable<T> GetRandom<T>(int count);
 
-        T GetById<T>(int id);
+    int GetCount();
 
-        IEnumerable<T> GetRandom<T>(int count);
+    Task UpdateAsync(int id, EditProductViewModel input);
 
-        int GetCount();
-
-        Task UpdateAsync(int id, EditProductViewModel input);
-
-        Task DeleteAsync(int id);
-    }
+    Task DeleteAsync(int id);
 }

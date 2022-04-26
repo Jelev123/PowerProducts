@@ -1,9 +1,9 @@
-﻿namespace PowerProducts.Data.Controllers
+﻿namespace PowerProducts.Web.Controllers
 {
     using Microsoft.AspNetCore.Mvc;
     using PowerProducts.Data.ViewModels.Food;
     using PowerProducts.Data.ViewModels.Product;
-    using PowerProducts.Services.Data;
+    using PowerProducts.Services.Data.Categories;
 
     public class CategoriesController : Controller
     {
@@ -16,7 +16,7 @@
 
         public IActionResult CategoriesById(int id)
         {
-            var product = this.categoriesService.GetCategoryById<ProductListViewModel>(id);
+            ProductListViewModel product = this.categoriesService.GetCategoryById<ProductListViewModel>(id);
             return this.View(product);
         }
 

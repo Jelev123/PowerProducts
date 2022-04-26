@@ -12,14 +12,20 @@
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
-    using PowerProducts.Data.Common;
     using PowerProducts.Data.Common.Repositories;
     using PowerProducts.Data.Models;
     using PowerProducts.Data.Repositories;
     using PowerProducts.Data.Seeding;
     using PowerProducts.Data.ViewModels;
     using PowerProducts.Services.Data;
-    using PowerProducts.Services.Data.Receipt;
+    using PowerProducts.Services.Data.Brands;
+    using PowerProducts.Services.Data.Categories;
+    using PowerProducts.Services.Data.Counts;
+    using PowerProducts.Services.Data.Ingredients;
+    using PowerProducts.Services.Data.Orders;
+    using PowerProducts.Services.Data.Products;
+    using PowerProducts.Services.Data.Receipts;
+    using PowerProducts.Services.Data.Subcategories;
     using PowerProducts.Services.Mapping;
     using PowerProducts.Services.Messaging;
 

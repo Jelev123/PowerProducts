@@ -1,10 +1,11 @@
-﻿namespace PowerProducts.Services.Data
+﻿namespace PowerProducts.Services.Data.Brands
 {
+    using System.Collections.Generic;
+    using System.Linq;
+
     using PowerProducts.Data.Common.Repositories;
     using PowerProducts.Data.Models;
     using PowerProducts.Services.Mapping;
-    using System.Collections.Generic;
-    using System.Linq;
 
     public class BrandService : IBrandService
     {

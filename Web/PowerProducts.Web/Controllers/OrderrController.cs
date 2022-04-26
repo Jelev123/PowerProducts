@@ -1,4 +1,4 @@
-﻿namespace PowerProducts.Data.Controllers
+﻿namespace PowerProducts.Web.Controllers
 {
     using System.Linq;
     using System.Security.Claims;
@@ -6,8 +6,8 @@
 
     using Microsoft.AspNetCore.Mvc;
     using PowerProducts.Data.Models.ViewModels;
-    using PowerProducts.Services.Data;
-    using PowerProducts.Services.Data.Receipt;
+    using PowerProducts.Services.Data.Orders;
+    using PowerProducts.Services.Data.Receipts;
 
     public class OrderrController : Controller
     {

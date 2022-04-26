@@ -1,11 +1,12 @@
-﻿namespace PowerProducts.Services.Data.Receipt
+﻿namespace PowerProducts.Services.Data.Receipts
 {
     using System;
     using System.Linq;
     using System.Threading.Tasks;
+
     using PowerProducts.Data.Common.Repositories;
     using PowerProducts.Data.Models;
-    using PowerProducts.Services.Data;
+    using PowerProducts.Services.Data.Orders;
     using PowerProducts.Services.Mapping;
 
     public class ReceiptService : IReceiptService
