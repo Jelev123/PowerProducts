@@ -37,4 +37,10 @@
     <ProjectReference Include="..\PowerProducts.Web.Infrastructure\PowerProducts.Web.Infrastructure.csproj" />
     <ProjectReference Include="..\PowerProducts.Web.ViewModels\PowerProducts.Web.ViewModels.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 </Project>

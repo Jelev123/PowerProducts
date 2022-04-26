@@ -84,6 +84,7 @@
 
             CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
             CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.InvariantCulture;
+            app.UseDeveloperExceptionPage();
 
             // Seed data on application startup
             using (var serviceScope = app.ApplicationServices.CreateScope())
