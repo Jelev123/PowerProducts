@@ -1,6 +1,6 @@
 <h1>PowerProducts :muscle:</h1>
 
-<h2>Introduction</h2>
+<h2> :closed_book:Introduction</h2>
 
 <h3>PowerProducts Website is my defense project for ASP.NET Core MVC course at SoftUni (30.04.2022).</h3>
 
