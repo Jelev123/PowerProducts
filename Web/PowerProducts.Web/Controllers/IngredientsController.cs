@@ -7,7 +7,6 @@
 
     public class IngredientsController : Controller
     {
-
         private readonly IIngredientsService ingredientsService;
 
         public IngredientsController(IIngredientsService ingredientsService)
