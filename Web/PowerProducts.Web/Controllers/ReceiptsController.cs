@@ -20,6 +20,5 @@
 
             return this.View(receiptServiceModel);
         }
-
     }
 }

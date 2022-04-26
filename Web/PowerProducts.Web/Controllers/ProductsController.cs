@@ -29,9 +29,14 @@
         private readonly IEmailSender imEmailSender;
         private readonly IOrderService orderService;
 
-        public ProductsController(IProductsService productsService, IEmailSender imEmailSender, ICategoriesService categoriesService, ISubCategoriesService subCategoriesService,
-             IBrandService brandService, IIngredientsService ingredientsService, IOrderService orderService
-            )
+        public ProductsController(
+            IProductsService productsService,
+            IEmailSender imEmailSender,
+            ICategoriesService categoriesService,
+            ISubCategoriesService subCategoriesService,
+            IBrandService brandService,
+            IIngredientsService ingredientsService,
+            IOrderService orderService)
         {
             this.productsService = productsService;
             this.imEmailSender = imEmailSender;
@@ -118,7 +123,7 @@
             html.AppendLine($"<h1>{product.Name}</h1>");
             html.AppendLine($"<h3>{product.Price}</h3>");
             html.AppendLine($"<img src=\"{product.OriginalUrl}\" />");
-            await this.imEmailSender.SendEmailAsync("powerfood@gmai.com", "bofiho8434@ketchet.com", html.ToString());
+            await this.imEmailSender.SendEmailAsync("powerproducts@gmai.com", "bofiho8434@ketchet.com", html.ToString());
             return this.RedirectToAction(nameof(this.ById), new { id });
         }
 

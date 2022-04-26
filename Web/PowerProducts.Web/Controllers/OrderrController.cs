@@ -18,7 +18,6 @@
         {
             this.orderService = orderService;
             this.receiptService = receiptService;
-
         }
 
         [HttpGet]

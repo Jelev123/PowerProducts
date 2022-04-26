@@ -1,4 +1,4 @@
-﻿namespace PowerProducts.Data
+﻿namespace PowerProducts.Web
 {
     using System.Globalization;
     using System.Linq;
@@ -12,6 +12,8 @@
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
+    using PowerProducts.Data;
+    using PowerProducts.Data.Common;
     using PowerProducts.Data.Common.Repositories;
     using PowerProducts.Data.Models;
     using PowerProducts.Data.Repositories;
@@ -67,7 +69,7 @@
             // Data repositories
             services.AddScoped(typeof(IDeletableEntityRepository<>), typeof(EfDeletableEntityRepository<>));
             services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
-            //services.AddScoped<IDbQueryRunner, DbQueryRunner>();
+            // services.AddScoped<IDbQueryRunner, DbQueryRunner>();
 
             // Application services
             services.AddTransient<IEmailSender, NullMessageSender>();

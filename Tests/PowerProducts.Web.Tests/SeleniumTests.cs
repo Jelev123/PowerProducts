@@ -5,7 +5,7 @@
 
     using OpenQA.Selenium;
     using OpenQA.Selenium.Chrome;
-    using PowerProducts.Data;
+    using PowerProducts.Web;
     using Xunit;
 
     public class SeleniumTests : IClassFixture<SeleniumServerFactory<Startup>>, IDisposable
