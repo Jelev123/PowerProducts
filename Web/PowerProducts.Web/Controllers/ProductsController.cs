@@ -73,7 +73,7 @@
                 return this.NotFound();
             }
 
-            const int ItemsPerPage = 6;
+            const int ItemsPerPage = 9;
 
             var viewModel = new ProductListViewModel()
             {
