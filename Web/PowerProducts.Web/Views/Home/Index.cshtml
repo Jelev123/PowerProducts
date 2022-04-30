@@ -6,9 +6,7 @@
 }
 
 
-<div id="products-search-bar-holder" class="form-group d-flex justify-content-between w-50">
-    <input  type="text" class="form-control text-black" id="products-search-bar" name="search" placeholder="Search..." />
-</div>
+
 
 
 <table class="table  table-dark">
@@ -73,23 +71,3 @@
         
     }
 </div>
-
-<script>
-    $('#sort').change(function () {
-        $('#order-form').submit();
-    });
-
-    $('#products-search-bar').on("change paste keyup", function () {
-        $('.card-body').show();
-
-        let searchValue = $('#products-search-bar').val();
-
-        for (let name of $('.card-body')) {
-            let productName = $($(name).children()[1]).text();
-
-            if (!productName.toLowerCase().includes(searchValue.toLowerCase())) {
-                $(name).hide();
-            }
-        }
-    });
-</script>
