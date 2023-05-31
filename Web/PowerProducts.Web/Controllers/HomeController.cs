@@ -15,7 +15,7 @@
 
     public class HomeController : BaseController
     {
-        private readonly IGetCountService countService;
+        private readonly IGetCountService countService; 
         private readonly IProductsService productsService;
         private readonly IDeletableEntityRepository<Product> productRepository;
 
